@@ -1,0 +1,26 @@
+service: hub-engagement
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, self:custom.defaultStage}
+  region: us-east-1
+
+custom:
+  defaultStage: dev
+
+functions:
+  survey123WebhookListener:
+    handler: handler.webhook
+    events:
+      - http:
+          path: webhook
+          method: post
+          cors: true
+    environment:
+      GA_KEY: ${file(./config/env.${self:provider.stage}.json):GA_KEY}
+      MG_KEY: ${file(./config/env.${self:provider.stage}.json):MG_KEY}
+      MG_DOMAIN: ${file(./config/env.${self:provider.stage}.json):MG_DOMAIN}
+      MG_SENDER: ${file(./config/env.${self:provider.stage}.json):MG_SENDER}
+      INITIATIVE_ID: ${file(./config/env.${self:provider.stage}.json):INITIATIVE_ID}
+      INITIATIVE_URL: ${file(./config/env.${self:provider.stage}.json):INITIATIVE_URL}

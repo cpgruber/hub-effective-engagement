@@ -1,0 +1,28 @@
+{
+  "name": "hub-engagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {
+    "@esri/arcgis-rest-auth": "^2.9.0",
+    "@esri/arcgis-rest-portal": "^2.9.0",
+    "@esri/arcgis-rest-request": "^2.9.0",
+    "@esri/hub-common": "^3.6.6",
+    "@esri/hub-initiatives": "^3.6.6",
+    "@esri/hub-sites": "^3.6.6",
+    "dotenv-json": "^1.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-form-data": "^2.0.0",
+    "mailgun-js": "^0.22.0",
+    "universal-analytics": "^0.4.20",
+    "uuidv4": "^6.0.5"
+  }
+}

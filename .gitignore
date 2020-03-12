@@ -1,0 +1,13 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+config/env.*.json
+!config/env.dummy.json
+
+notes.md
+
+.DS_Store
